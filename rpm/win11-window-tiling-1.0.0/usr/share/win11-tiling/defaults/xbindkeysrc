@@ -1,0 +1,26 @@
+# Windows 11-style window tiling hotkeys for X11 sessions.
+# Managed by win11-window-tiling
+
+"win11-tile left"
+  Mod4 + Left
+
+"win11-tile right"
+  Mod4 + Right
+
+"win11-tile maximize"
+  Mod4 + Up
+
+"win11-tile restore"
+  Mod4 + Down
+
+"win11-tile top-left"
+  Mod4 + Shift + Left
+
+"win11-tile top-right"
+  Mod4 + Shift + Right
+
+"win11-tile bottom-left"
+  Mod4 + Shift + Down
+
+"win11-tile bottom-right"
+  Mod4 + Shift + Up

@@ -1,0 +1,15 @@
+# Maintainer: Local Build <local@localhost>
+pkgname=win11-window-tiling-kde
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Windows 11-style window tiling for Arch Linux (KDE Plasma / KZones)"
+arch=('any')
+url="https://github.com/gerritdevriese/kzones"
+license=('MIT' 'GPL-3.0-or-later')
+depends=('plasma-workspace' 'kwin' 'dbus' 'bash')
+source=("$pkgname-$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+package() {
+  cp -a "$srcdir/usr" "$pkgdir/"
+}

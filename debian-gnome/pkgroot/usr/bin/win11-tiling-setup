@@ -1,0 +1,84 @@
+#!/bin/bash
+# Configure Tiling Shell for Debian GNOME.
+
+set -euo pipefail
+
+SHARE_DIR="/usr/share/win11-tiling"
+MARKER="${XDG_CONFIG_HOME:-$HOME/.config}/win11-tiling/installed"
+EXT_UUID="tilingshell@ferrarodomenico.com"
+
+usage() {
+    cat <<'EOF'
+win11-tiling-setup - Enable Windows 11-style tiling on Debian (GNOME)
+
+Usage:
+  win11-tiling-setup              Install and enable Tiling Shell
+  win11-tiling-setup --status     Show configuration status
+  win11-tiling-setup --uninstall  Remove user configuration
+
+After setup, log out and back in for full effect.
+EOF
+}
+
+show_status() {
+    echo "Edition:          Debian GNOME"
+    echo "Session type:     ${XDG_SESSION_TYPE:-unknown}"
+
+    if [ -f "$MARKER" ]; then
+        echo "Setup status:     configured ($(head -1 "$MARKER"))"
+    else
+        echo "Setup status:     not configured"
+    fi
+
+    EXT_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/gnome-shell/extensions/${EXT_UUID}"
+    if [ -d "$EXT_DIR" ]; then
+        echo "GNOME extension:  installed"
+        if command -v gnome-extensions >/dev/null 2>&1; then
+            gnome-extensions info "$EXT_UUID" 2>/dev/null | grep -E '^(Name|State|Version):' || true
+        fi
+    else
+        echo "GNOME extension:  not installed"
+    fi
+}
+
+uninstall() {
+    rm -f "$MARKER"
+    rm -rf "${XDG_CONFIG_HOME:-$HOME/.config}/win11-tiling"
+    rm -rf "${XDG_DATA_HOME:-$HOME/.local/share}/gnome-shell/extensions/${EXT_UUID}"
+    echo "win11-window-tiling-gnome user configuration removed."
+}
+
+run_setup() {
+    if ! command -v gnome-shell >/dev/null 2>&1; then
+        echo "ERROR: gnome-shell not found." >&2
+        echo "This package is built for Debian with GNOME." >&2
+        echo "Install with: sudo apt install gnome-shell gnome-shell-extensions" >&2
+        exit 1
+    fi
+
+    echo "Configuring Tiling Shell for Debian GNOME..."
+    echo ""
+    bash "$SHARE_DIR/scripts/setup-gnome.sh"
+
+    mkdir -p "$(dirname "$MARKER")"
+    date -Iseconds > "$MARKER"
+    echo "debian-gnome" >> "$MARKER"
+
+    echo ""
+    echo "Setup complete! Log out and back in to apply all changes."
+    echo ""
+    echo "Windows 11 shortcuts (Tiling Shell):"
+    echo "  Super + Left/Right  - Snap between tiles"
+    echo "  Super + Up/Down     - Move up/down in layout"
+    echo "  Drag to top edge    - Snap Assistant layout picker"
+    echo ""
+    echo "Configure in: Extensions > Tiling Shell"
+}
+
+case "${1:-}" in
+    "" )          run_setup ;;
+    --status)    show_status ;;
+    --uninstall) uninstall ;;
+    -h|--help)   usage ;;
+    *) echo "Unknown option: $1" >&2; usage; exit 1 ;;
+esac

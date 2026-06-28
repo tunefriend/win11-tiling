@@ -1,0 +1,19 @@
+win11-window-tiling-kde — Debian KDE Plasma Edition
+===================================================
+
+Windows 11-style window tiling for Debian with KDE Plasma and KZones.
+
+Install
+-------
+
+  sudo dpkg -i win11-window-tiling-kde_1.0.0_all.deb
+  sudo apt install -f
+
+Setup
+-----
+
+  win11-tiling-setup
+
+Log out and back in after setup.
+
+License: KZones GPL-3.0; scripts MIT.

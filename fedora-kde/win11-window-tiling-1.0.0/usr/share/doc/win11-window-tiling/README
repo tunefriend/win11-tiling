@@ -1,0 +1,57 @@
+win11-window-tiling — Fedora KDE Plasma Edition
+================================================
+
+Windows 11-style window tiling for Fedora KDE Plasma Spin.
+
+This edition installs the KZones KWin script for zone-based snapping and
+configures Windows 11-style Super+Arrow keyboard shortcuts.
+
+Requirements
+------------
+
+  Fedora KDE Plasma Spin with KWin (Plasma 6).
+
+Install
+-------
+
+  sudo dnf install ./win11-window-tiling-1.0.0-1.fc41kde.noarch.rpm
+
+Setup
+-----
+
+  win11-tiling-setup
+
+Log out and back in after setup.
+
+Usage
+-----
+
+  Super + Left/Right         Tile to left/right half
+  Super + Up                 Maximize
+  Super + Down               Minimize
+  Super + Shift + Left       Top-left quarter
+  Super + Shift + Right      Top-right quarter
+  Super + Shift + Down       Bottom-left quarter
+  Super + Shift + Up         Bottom-right quarter
+  Drag to screen edges       Snap into KZones
+
+Settings: System Settings > Window Management > KWin Scripts > KZones
+
+Commands
+--------
+
+  win11-tiling-setup --status     Check install status
+  win11-tiling-setup --uninstall  Remove KZones from your user profile
+  win11-tile left                 Manually tile active window (CLI)
+
+Build from source (on Fedora)
+-----------------------------
+
+  cd fedora-kde
+  ./build.sh
+
+License
+-------
+
+KZones KWin script: GPL-3.0 (https://github.com/gerritdevriese/kzones)
+Package scripts: MIT License

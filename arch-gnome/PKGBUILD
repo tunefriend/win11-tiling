@@ -1,0 +1,15 @@
+# Maintainer: Local Build <local@localhost>
+pkgname=win11-window-tiling-gnome
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Windows 11-style window tiling for Arch Linux (GNOME / Tiling Shell)"
+arch=('any')
+url="https://github.com/domferr/tilingshell"
+license=('MIT' 'GPL-3.0-or-later')
+depends=('gnome-shell' 'gnome-extensions' 'unzip' 'dbus' 'bash')
+source=("$pkgname-$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+package() {
+  cp -a "$srcdir/usr" "$pkgdir/"
+}

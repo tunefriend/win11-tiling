@@ -1,0 +1,63 @@
+win11-window-tiling
+==================
+
+Windows 11-style automatic window tiling for Debian.
+
+Features
+--------
+
+- Snap windows to halves, quarters, and custom zones
+- Snap Assist: suggests other windows when snapping (GNOME Tiling Shell)
+- Drag-to-edge snapping (GNOME, KDE KZones)
+- Windows 11 keyboard shortcuts: Super + Arrow keys
+- Auto-detects GNOME, KDE Plasma, or falls back to X11
+
+Installation
+------------
+
+  sudo dpkg -i win11-window-tiling_1.0.0_all.deb
+  sudo apt install -f   # resolve any missing dependencies
+
+Setup
+-----
+
+  win11-tiling-setup
+
+Log out and back in after setup.
+
+Desktop Support
+---------------
+
+GNOME (Debian 12+)
+  Installs Tiling Shell extension with Snap Assistant and Fancy Zones.
+  https://github.com/domferr/tilingshell
+
+KDE Plasma 6
+  Installs KZones KWin script for zone-based snapping.
+  https://github.com/gerritdevriese/kzones
+
+X11 (XFCE, MATE, etc.)
+  Uses wmctrl + xbindkeys for Super+Arrow hotkeys.
+
+Commands
+--------
+
+  win11-tiling-setup          Enable tiling for your desktop
+  win11-tiling-setup --status Show configuration status
+  win11-tile left             Manually snap active window left
+  win11-tiling-setup --uninstall  Remove user config
+
+Keyboard Shortcuts
+------------------
+
+  Super + Left        Snap to left half
+  Super + Right       Snap to right half
+  Super + Up          Maximize
+  Super + Down        Restore / minimize
+  Super + Shift + Arrows   Quarter snapping (X11/KDE)
+
+License
+-------
+
+Bundled extensions retain their original licenses (GPL).
+Package scripts: MIT License.

@@ -1,0 +1,95 @@
+#!/bin/bash
+# Configure KZones for Arch Linux (KDE Plasma).
+
+set -euo pipefail
+
+SHARE_DIR="/usr/share/win11-tiling"
+MARKER="${XDG_CONFIG_HOME:-$HOME/.config}/win11-tiling/installed"
+KZONES_SCRIPT="${XDG_DATA_HOME:-$HOME/.local/share}/kwin/scripts/kzones.kwinscript"
+
+usage() {
+    cat <<'EOF'
+win11-tiling-setup - Enable Windows 11-style tiling on Arch Linux (KDE Plasma)
+
+Usage:
+  win11-tiling-setup              Install and enable KZones
+  win11-tiling-setup --status     Show configuration status
+  win11-tiling-setup --uninstall  Remove user configuration
+
+After setup, log out and back in for full effect.
+EOF
+}
+
+show_status() {
+    echo "Edition:          Arch Linux (KDE Plasma)"
+    echo "Session type:     ${XDG_SESSION_TYPE:-unknown}"
+
+    if [ -f "$MARKER" ]; then
+        echo "Setup status:     configured ($(head -1 "$MARKER"))"
+    else
+        echo "Setup status:     not configured"
+    fi
+
+    if [ -f "$KZONES_SCRIPT" ]; then
+        echo "KZones script:    installed"
+    else
+        echo "KZones script:    not installed"
+    fi
+
+    if command -v kwin_wayland >/dev/null 2>&1 || command -v kwin_x11 >/dev/null 2>&1; then
+        echo "KWin:             available"
+    else
+        echo "KWin:             not found"
+    fi
+}
+
+uninstall() {
+    rm -f "$MARKER"
+    rm -rf "${XDG_CONFIG_HOME:-$HOME/.config}/win11-tiling"
+    rm -f "$KZONES_SCRIPT"
+
+    QDBUS=qdbus6
+    command -v qdbus6 >/dev/null 2>&1 || QDBUS=qdbus
+    if command -v "$QDBUS" >/dev/null 2>&1; then
+        "$QDBUS" org.kde.KWin /Scripting org.kde.kwin.Scripting.unloadScript kzones 2>/dev/null || true
+    fi
+
+    echo "win11-window-tiling user configuration removed."
+}
+
+run_setup() {
+    if ! command -v kwin_wayland >/dev/null 2>&1 && ! command -v kwin_x11 >/dev/null 2>&1; then
+        echo "ERROR: KWin not found." >&2
+        echo "This package is built for Arch Linux with KDE Plasma." >&2
+        echo "Install with: sudo pacman -S plasma-workspace kwin" >&2
+        exit 1
+    fi
+
+    echo "Configuring KZones for Arch Linux (KDE Plasma)..."
+    echo ""
+    bash "$SHARE_DIR/scripts/setup-kde.sh"
+
+    mkdir -p "$(dirname "$MARKER")"
+    date -Iseconds > "$MARKER"
+    echo "arch-linux-kde" >> "$MARKER"
+
+    echo ""
+    echo "Setup complete! Log out and back in to apply all changes."
+    echo ""
+    echo "Windows 11 shortcuts:"
+    echo "  Super + Left/Right       - Tile to half screen"
+    echo "  Super + Up               - Maximize"
+    echo "  Super + Down             - Minimize"
+    echo "  Super + Shift + Arrows   - Quarter tiles"
+    echo "  Drag to screen edges     - Zone snapping (KZones)"
+    echo ""
+    echo "Configure in: System Settings > Window Management > KWin Scripts"
+}
+
+case "${1:-}" in
+    "" )          run_setup ;;
+    --status)    show_status ;;
+    --uninstall) uninstall ;;
+    -h|--help)   usage ;;
+    *) echo "Unknown option: $1" >&2; usage; exit 1 ;;
+esac

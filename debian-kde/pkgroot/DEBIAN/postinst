@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+    configure)
+        echo ""
+        echo "  win11-window-tiling-kde (Debian KDE Plasma) installed!"
+        echo ""
+        echo "  Run 'win11-tiling-setup' to enable KZones."
+        echo "  Log out and back in after setup."
+        echo ""
+        ;;
+esac
+
+exit 0

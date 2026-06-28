@@ -1,0 +1,13 @@
+Package: win11-window-tiling-kde
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Depends: dbus-x11 | dbus, bash, plasma-workspace, kwin-wayland | kwin-x11
+Maintainer: Local Build <local@localhost>
+Description: Windows 11-style window tiling for Debian KDE Plasma
+ Installs and configures the KZones KWin script for zone-based window
+ snapping and Windows 11-style Super+Arrow keyboard shortcuts.
+ .
+ Built specifically for Debian with KDE Plasma 6. After install, run
+ 'win11-tiling-setup' and log out and back in.

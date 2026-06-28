@@ -1,0 +1,440 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \qc \f0 \sa180 \li0 \fi0 \b \fs36 win11-window-tiling-gnome Debian GNOME User Manual\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 win11-window-tiling-gnome \u8212- Debian GNOME User Manual\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Version 1.0.0 (Debian GNOME Edition)}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Windows 11-style window tiling for Debian with GNOME and the Tiling Shell extension.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Table of Contents\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab {\field{\*\fldinst{HYPERLINK "#1-overview"}}{\fldrslt{\ul
+Overview
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab {\field{\*\fldinst{HYPERLINK "#2-requirements"}}{\fldrslt{\ul
+Requirements
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab {\field{\*\fldinst{HYPERLINK "#3-installation"}}{\fldrslt{\ul
+Installation
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 4.\tx360\tab {\field{\*\fldinst{HYPERLINK "#4-first-time-setup"}}{\fldrslt{\ul
+First-Time Setup
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 5.\tx360\tab {\field{\*\fldinst{HYPERLINK "#5-daily-use"}}{\fldrslt{\ul
+Daily Use
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 6.\tx360\tab {\field{\*\fldinst{HYPERLINK "#6-configuration"}}{\fldrslt{\ul
+Configuration
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 7.\tx360\tab {\field{\*\fldinst{HYPERLINK "#7-commands"}}{\fldrslt{\ul
+Commands
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 8.\tx360\tab {\field{\*\fldinst{HYPERLINK "#8-troubleshooting"}}{\fldrslt{\ul
+Troubleshooting
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 9.\tx360\tab {\field{\*\fldinst{HYPERLINK "#9-uninstalling"}}{\fldrslt{\ul
+Uninstalling
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 10.\tx360\tab {\field{\*\fldinst{HYPERLINK "#10-building-from-source"}}{\fldrslt{\ul
+Building from Source
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 11.\tx360\tab {\field{\*\fldinst{HYPERLINK "#11-license"}}{\fldrslt{\ul
+License
+}}}
+\sa180\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 1. Overview\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This package is built specifically for {\b Debian with GNOME}. It installs and configures {\b Tiling Shell}, a GNOME Shell extension that brings Windows 11-style window management to Linux.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Features\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx3534\clbrdrb\brdrs\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Feature\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Description\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Snap Assistant\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Drag a window to the top of the screen to pick a layout\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Fancy Zones\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Custom tile grids per monitor and workspace\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Edge snapping\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Drag windows to screen edges to snap to halves or quarters\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Keyboard shortcuts\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + arrow keys to move windows between tiles\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Package name\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\f1 win11-window-tiling-gnome}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Upstream project\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Tiling Shell: https://github.com/domferr/tilingshell\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 2. Requirements\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Debian} with GNOME desktop (Debian 12+ recommended)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b GNOME Shell 45 or newer}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Dependencies (installed with the package):\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\f1 gnome-shell}\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\f1 gnome-shell-extensions} or {\f1 gnome-extensions}\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\f1 unzip}\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\f1 dbus} or {\f1 dbus-x11}\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\f1 bash}\sa180\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Check your GNOME version:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 gnome-shell --version\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 3. Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Step 1 \u8212- Copy the package\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Transfer: {\f1 win11-window-tiling-gnome_1.0.0_all.deb}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Step 2 \u8212- Install with dpkg\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 sudo dpkg -i win11-window-tiling-gnome_1.0.0_all.deb\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Step 3 \u8212- Fix missing dependencies\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 sudo apt install -f\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Step 4 \u8212- Verify\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 dpkg -l win11-window-tiling-gnome\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 4. First-Time Setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Log out and back in, then confirm {\b Tiling Shell} is enabled in {\b Extensions}.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup --status\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 5. Daily Use\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Keyboard shortcuts\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Shortcut\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Action\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Left\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move to left tile\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Right\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move to right tile\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Up\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move to tile above\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Down\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move to tile below\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Mouse\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Action\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Result\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Drag to top edge\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Snap Assistant layout picker\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Drag to side edges\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Snap to halves or quarters\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Ctrl + drag\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Place in a specific tile\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Alt + drag\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Span multiple tiles\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 6. Configuration\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Extensions \u8594 ? Tiling Shell \u8594 ? gear icon}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Key settings: Snap Assist, tiling system, edge snapping, keybindings, custom layouts, gaps.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 gsettings set org.gnome.shell.extensions.tilingshell enable-snap-assist false\line
+gsettings set org.gnome.shell.extensions.tilingshell inner-gaps 24\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 7. Commands\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx3534\clbrdrb\brdrs\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Command\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Description\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Install and enable Tiling Shell\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --status}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Show status\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --uninstall}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Remove user config\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 gnome-extensions enable tilingshell@ferrarodomenico.com}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Enable extension manually\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 8. Troubleshooting\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 gnome-shell not found\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 sudo apt install gnome-shell gnome-shell-extensions\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Extension not working\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 gnome-extensions enable tilingshell@ferrarodomenico.com\line
+win11-tiling-setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Log out and back in.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Super + arrow does nothing\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Check Tiling Shell keybindings and {\b Settings \u8594 ? Keyboard} for conflicts.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Wrong edition\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Use {\f1 win11-window-tiling-gnome}, not {\f1 win11-window-tiling-kde} or the generic package.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 9. Uninstalling\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup --uninstall\line
+sudo apt remove win11-window-tiling-gnome\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 10. Building from Source\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 cd debian-gnome\line
+./build.sh\line
+sudo dpkg -i ../win11-window-tiling-gnome_1.0.0_all.deb\line
+sudo apt install -f\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 11. License\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Component\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 License\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Tiling Shell extension\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 GPL-3.0-or-later\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Package setup scripts\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 MIT License\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Quick Start Checklist\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Install: {\f1 sudo dpkg -i win11-window-tiling-gnome_1.0.0_all.deb}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Fix deps: {\f1 sudo apt install -f}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Setup: {\f1 win11-tiling-setup}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Log out and back in\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Enable: Extensions \u8594 ? Tiling Shell \u8594 ? ON\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Test: Super + Left or drag to top edge\sa180\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Debian Edition Comparison\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Package\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Desktop\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-window-tiling}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Generic (auto-detect)\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-window-tiling-gnome}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 GNOME / Tiling Shell\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-window-tiling-kde}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 KDE Plasma / KZones\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+}

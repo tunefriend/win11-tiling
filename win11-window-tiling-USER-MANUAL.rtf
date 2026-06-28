@@ -1,0 +1,1208 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \qc \f0 \sa180 \li0 \fi0 \b \fs36 win11-window-tiling User Manual\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 win11-window-tiling \u8212- User Manual\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Version 1.0.0}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Windows 11-style automatic window tiling for Debian and Debian-based desktops (GNOME, KDE Plasma, X11).\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Table of Contents\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab {\field{\*\fldinst{HYPERLINK "#1-what-this-package-does"}}{\fldrslt{\ul
+What This Package Does
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab {\field{\*\fldinst{HYPERLINK "#2-system-requirements"}}{\fldrslt{\ul
+System Requirements
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab {\field{\*\fldinst{HYPERLINK "#3-installation"}}{\fldrslt{\ul
+Installation
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 4.\tx360\tab {\field{\*\fldinst{HYPERLINK "#4-first-time-setup"}}{\fldrslt{\ul
+First-Time Setup
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 5.\tx360\tab {\field{\*\fldinst{HYPERLINK "#5-daily-use"}}{\fldrslt{\ul
+Daily Use
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 6.\tx360\tab {\field{\*\fldinst{HYPERLINK "#6-configuration"}}{\fldrslt{\ul
+Configuration
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 7.\tx360\tab {\field{\*\fldinst{HYPERLINK "#7-command-reference"}}{\fldrslt{\ul
+Command Reference
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 8.\tx360\tab {\field{\*\fldinst{HYPERLINK "#8-keyboard-shortcuts"}}{\fldrslt{\ul
+Keyboard Shortcuts
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 9.\tx360\tab {\field{\*\fldinst{HYPERLINK "#9-troubleshooting"}}{\fldrslt{\ul
+Troubleshooting
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 10.\tx360\tab {\field{\*\fldinst{HYPERLINK "#10-uninstalling"}}{\fldrslt{\ul
+Uninstalling
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 11.\tx360\tab {\field{\*\fldinst{HYPERLINK "#11-file-locations"}}{\fldrslt{\ul
+File Locations
+}}}
+\sa180\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 1. What This Package Does\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\f1 win11-window-tiling} brings Windows 11-style window management to Linux:\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx3534\clbrdrb\brdrs\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Feature\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Description\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b Snap layouts}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Tile windows to halves, quarters, and custom zones\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b Snap Assistant}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Drag a window to the top of the screen to pick a layout (GNOME)\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b Edge snapping}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Drag windows to screen edges to snap them (GNOME, KDE)\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b Keyboard shortcuts}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super} + arrow keys, matching Windows 11\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b Auto-detection}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Picks the best tiling backend for your desktop environment\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The package does {\b not} replace your desktop environment. It installs and configures the right tiling tool for your session:\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Desktop\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Backend\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b GNOME} (Debian 12+)\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "https://github.com/domferr/tilingshell"}}{\fldrslt{\ul
+Tiling Shell
+}}}
+ extension\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b KDE Plasma 6}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "https://github.com/gerritdevriese/kzones"}}{\fldrslt{\ul
+KZones
+}}}
+ KWin script\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b X11 fallback} (XFCE, MATE, Cinnamon, etc.)\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 wmctrl} + {\f1 xbindkeys}\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 2. System Requirements\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Required (installed automatically with the package)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\f1 python3}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\f1 dbus} or {\f1 dbus-x11}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\f1 x11-utils}\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Recommended (for full functionality)\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4092\clbrdrb\brdrs\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Package\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Used for\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4092\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 wmctrl}, {\f1 xdotool}, {\f1 xbindkeys}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 X11 fallback tiling\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4092\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 gnome-extensions} or {\f1 gnome-shell-extension-prefs}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 GNOME extension management\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4092\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 plasma-workspace}, {\f1 kwin-x11} or {\f1 kwin-wayland}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 KDE Plasma tiling\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Supported desktops\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b GNOME} 45+ (Debian 12 / 13 with modern GNOME Shell)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b KDE Plasma 6}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b XFCE, MATE, Cinnamon} and other X11 desktops (fallback mode)\sa180\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 {\b Note:} On Wayland sessions without GNOME or KDE, native tiling is limited. Install GNOME or KDE for the best experience.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 3. Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Step 1 \u8212- Install the package\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If you have the {\f1 .deb} file (e.g.\u160 ?in {\f1 ~/Downloads}):\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 sudo dpkg -i ~/Downloads/win11-window-tiling_1.0.0_all.deb\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Step 2 \u8212- Fix missing dependencies (if prompted)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 sudo apt install -f\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This installs recommended packages such as {\f1 wmctrl}, {\f1 xdotool}, and {\f1 xbindkeys}.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Step 3 \u8212- Verify installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 dpkg -l win11-window-tiling\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 You should see {\f1 Status: install ok installed}.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Step 4 \u8212- Run setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Step 5 \u8212- Log out and back in\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Tiling extensions and autostart entries need a fresh session to take effect.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 4. First-Time Setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The setup command detects your desktop and configures the appropriate backend.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Force a specific backend\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Command\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Use when\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --gnome}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 You use GNOME and want Tiling Shell\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --kde}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 You use KDE Plasma and want KZones\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --x11}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 You want the wmctrl/xbindkeys fallback\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Check setup status\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup --status\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Example output on GNOME:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 Detected desktop: gnome\line
+Session type:     wayland\line
+Setup status:     configured (2026-06-28T10:45:00-05:00\line
+gnome)\line
+GNOME extension:  installed\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 What setup does (by desktop)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b GNOME} - Installs the Tiling Shell extension to {\f1 ~/.local/share/gnome-shell/extensions/} - Enables the extension via {\f1 gnome-extensions} (if available) - Uses the modern or legacy extension build based on your GNOME Shell version\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b KDE Plasma} - Copies the KZones KWin script to {\f1 ~/.local/share/kwin/scripts/} - Loads and runs the script via KWin\u8217's scripting API - Configures Windows 11-style {\f1 Super} + arrow shortcuts in KGlobalAccel\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b X11 fallback} - Copies hotkey config to {\f1 ~/.config/win11-tiling/xbindkeysrc} - Adds an autostart entry so {\f1 xbindkeys} starts on login - Starts {\f1 xbindkeys} immediately if it is installed\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 5. Daily Use\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 GNOME\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 After logging back in, confirm {\b Tiling Shell} is enabled:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab Open {\b Extensions} (search \u8220"Extensions\u8221" in Activities, or run {\f1 gnome-extensions-app})\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab Find {\b Tiling Shell} and ensure the toggle is {\b on}\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Snap with the mouse\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Drag a window to the top edge} \u8212- Snap Assistant appears with layout thumbnails (like Windows 11).\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Drag to the left or right edge} \u8212- Snap to half-screen or quarters.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Hold Ctrl while dragging} \u8212- Use the tiling system to place the window in a specific tile.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Hold Alt while dragging} \u8212- Span the window across multiple tiles.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Snap with the keyboard\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Focus a window, then press:\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Shortcut\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Action\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Left}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move to the tile on the left\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Right}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move to the tile on the right\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Up}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move to the tile above\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Down}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move to the tile below\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Window menu\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Right-click a window\u8217's title bar. Tiling Shell adds {\b snap} and {\b auto-tile} options when {\f1 override-window-menu} is enabled (default).\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Alt+Tab\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Tiled windows can be grouped in the Alt+Tab switcher so you can raise all tiled windows together.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 KDE Plasma\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 After setup and re-login:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Snap with the mouse\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Drag windows to screen edges} \u8212- KZones snaps them into predefined zones.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Snap with the keyboard\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Shortcut\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Action\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Left}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Tile to left half\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Right}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Tile to right half\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Up}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Maximize\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Down}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Minimize\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Shift + Left}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Top-left quarter\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Shift + Right}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Top-right quarter\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Shift + Down}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Bottom-left quarter\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Shift + Up}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Bottom-right quarter\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 KZones settings\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Open {\b System Settings \u8594 ? Window Management \u8594 ? KWin Scripts} to adjust zone layouts and behavior.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 X11 (XFCE, MATE, Cinnamon, etc.)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Hotkeys are managed by {\f1 xbindkeys} and start automatically on login.\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Shortcut\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Action\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Left}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Left half\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Right}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Right half\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Up}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Maximize\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Down}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Restore (un-maximize and resize)\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Shift + Left}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Top-left quarter\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Shift + Right}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Top-right quarter\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Shift + Down}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Bottom-left quarter\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Shift + Up}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Bottom-right quarter\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Manual tiling from the terminal\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tile left\line
+win11-tile right\line
+win11-tile top-left\line
+win11-tile maximize\line
+win11-tile restore\line
+win11-tile center\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 6. Configuration\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 GNOME \u8212- Tiling Shell settings\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Open {\b Extensions \u8594 ? Tiling Shell \u8594 ? gear icon} (or search \u8220"Tiling Shell\u8221" in Settings).\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Recommended settings to explore\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx2430\clbrdrb\brdrs\cellx4860\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Setting\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Default\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 What it does\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2430\cellx4860\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Enable snap assist\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 On\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Show layout picker when dragging to top edge\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2430\cellx4860\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Enable tiling system\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 On\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Hold Ctrl while moving to snap into tiles\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2430\cellx4860\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Active screen edges\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 On\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Resize/snapping when dragging to edges\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2430\cellx4860\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Enable auto tiling\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Off\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Automatically tile new windows into the best tile\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2430\cellx4860\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Inner gaps\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 16 px\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Space between tiles\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2430\cellx4860\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Outer gaps\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 8 px\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Space between layout and monitor edge\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2430\cellx4860\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Enable move keybindings\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 On\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + arrow key tiling\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2430\cellx4860\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Edge tiling mode\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 default\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 How edge snaps behave (default / adaptive / granular)\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Custom layouts (Fancy Zones)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 In Tiling Shell settings:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab Open the {\b Layouts} section.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab Create or import custom tile grids.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab Assign layouts per monitor and per workspace.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 4.\tx360\tab Use {\b Cycle layouts} keybindings (assign in the Keybindings section).\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Change keyboard shortcuts (GNOME)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 In Tiling Shell settings \u8594 ? {\b Keybindings}:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Move window left/right/up/down\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Span window across tiles\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Untile window\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Focus next/previous tiled window\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Cycle layouts\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Defaults match Windows 11 ({\f1 Super} + arrows). Change any binding to your preference.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 GNOME settings via command line\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 # Example: disable snap assist\line
+gsettings set org.gnome.shell.extensions.tilingshell enable-snap-assist false\line
+\line
+# Example: increase gap between tiles\line
+gsettings set org.gnome.shell.extensions.tilingshell inner-gaps 24\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 KDE \u8212- KZones and shortcuts\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Zone layouts:} System Settings \u8594 ? Window Management \u8594 ? KWin Scripts \u8594 ? KZones\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Keyboard shortcuts:} System Settings \u8594 ? Shortcuts \u8594 ? KWin\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The setup script pre-configures {\f1 Meta} (Super) + arrow shortcuts. Adjust them in KWin shortcut settings if they conflict with other bindings.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 X11 \u8212- xbindkeys config\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 User config file:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 ~/.config/win11-tiling/xbindkeysrc\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Edit this file to change hotkeys. Example entry:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 "win11-tile left"\line
+  Mod4 + Left\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\f1 Mod4} is the Super/Windows key.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 After editing, restart xbindkeys:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 pkill xbindkeys\line
+xbindkeys -f ~/.config/win11-tiling/xbindkeysrc\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Or log out and back in (autostart handles it).\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 7. Command Reference\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Command\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Description\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Detect desktop and configure tiling\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --gnome}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Force GNOME / Tiling Shell setup\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --kde}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Force KDE / KZones setup\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --x11}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Force X11 wmctrl + xbindkeys setup\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --status}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Show current configuration status\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --uninstall}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Remove user configuration\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --help}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Show usage information\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tile <position>}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Manually tile the active window (X11/KDE)\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 {\f1 win11-tile} positions\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 left, right, top, bottom\line
+top-left, top-right, bottom-left, bottom-right\line
+maximize (or up), restore (or down), center\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 On GNOME, use Tiling Shell shortcuts and drag-to-snap instead of {\f1 win11-tile}.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 8. Keyboard Shortcuts\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Quick reference (all desktops):\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx3200\clbrdrb\brdrs\cellx5440\clbrdrb\brdrs\cellx7040\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Shortcut\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 GNOME\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 KDE\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 X11\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3200\cellx5440\cellx7040\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Left}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move to left tile\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Tile left half\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Left half\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3200\cellx5440\cellx7040\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Right}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move to right tile\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Tile right half\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Right half\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3200\cellx5440\cellx7040\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Up}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move up / maximize\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Maximize\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Maximize\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3200\cellx5440\cellx7040\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Down}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move down / restore\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Minimize\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Restore\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3200\cellx5440\cellx7040\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Super + Shift + arrows}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 (configure in extension)\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Quarter tiles\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Quarter tiles\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3200\cellx5440\cellx7040\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Drag to top edge\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Snap Assistant\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 \u8212-\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 \u8212-\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3200\cellx5440\cellx7040\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Drag to side edges\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Edge snap\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 KZones snap\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 \u8212-\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3200\cellx5440\cellx7040\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Ctrl + drag} (GNOME)\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Tiling system\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 \u8212-\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 \u8212-\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3200\cellx5440\cellx7040\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 Alt + drag} (GNOME)\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Span multiple tiles\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 \u8212-\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 \u8212-\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 9. Troubleshooting\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Setup says \u8220"not configured\u8221"\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Then log out and back in.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 GNOME: extension not working after setup\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 1.\tx360\tab Check it is enabled:\par}
+{\pard \ql \f0 \sa180 \li360 \fi0 \f1 gnome-extensions list --enabled | grep tilingshell\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 2.\tx360\tab If missing, enable it:\par}
+{\pard \ql \f0 \sa180 \li360 \fi0 \f1 gnome-extensions enable tilingshell@ferrarodomenico.com\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 3.\tx360\tab Re-run setup:\par}
+{\pard \ql \f0 \sa180 \li360 \fi0 \f1 win11-tiling-setup --gnome\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 4.\tx360\tab {\b Log out and back in} (required after installing a GNOME Shell extension).\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 5.\tx360\tab If the extension shows as \u8220"incompatible\u8221", your GNOME Shell version may not be supported. Check:\par}
+{\pard \ql \f0 \sa180 \li360 \fi0 \f1 gnome-shell --version\par}
+{\pard \ql \f0 \sa180 \li360 \fi0 Tiling Shell in this package supports GNOME Shell 45\u8211-49.\sa180\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 GNOME: Super + arrow does nothing\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Another extension or GNOME setting may be using the same shortcuts.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Open {\b Tiling Shell \u8594 ? Keybindings} and verify bindings are set.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Confirm {\b Enable keybindings} is turned on.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Check for conflicts in {\b Settings \u8594 ? Keyboard \u8594 ? Keyboard Shortcuts}.\sa180\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 KDE: zones or shortcuts not working\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 1.\tx360\tab Verify the script is installed:\par}
+{\pard \ql \f0 \sa180 \li360 \fi0 \f1 ls ~/.local/share/kwin/scripts/kzones.kwinscript\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 2.\tx360\tab Re-run setup:\par}
+{\pard \ql \f0 \sa180 \li360 \fi0 \f1 win11-tiling-setup --kde\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 3.\tx360\tab Restart KWin or log out and back in.\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 4.\tx360\tab Check {\b System Settings \u8594 ? Shortcuts} for conflicting {\f1 Meta} bindings.\sa180\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 X11: hotkeys not working\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 1.\tx360\tab Confirm dependencies:\par}
+{\pard \ql \f0 \sa180 \li360 \fi0 \f1 sudo apt install wmctrl xdotool xbindkeys\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 2.\tx360\tab Check xbindkeys is running:\par}
+{\pard \ql \f0 \sa180 \li360 \fi0 \f1 pgrep -a xbindkeys\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 3.\tx360\tab Start manually:\par}
+{\pard \ql \f0 \sa180 \li360 \fi0 \f1 xbindkeys -f ~/.config/win11-tiling/xbindkeysrc\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 4.\tx360\tab Test tiling directly:\par}
+{\pard \ql \f0 \sa180 \li360 \fi0 \f1 win11-tile left\sa180\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Wayland warning during setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If you see:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 WARNING: Wayland session without native GNOME/KDE support.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 You are on a Wayland session that is not GNOME or KDE. The X11 fallback has limited Wayland support. Use GNOME or KDE for full tiling, or switch to an X11 session.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Package won\u8217't install\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If {\f1 dpkg} reports a control file error, ensure you have the rebuilt package (fixed trailing newline in the control file). Re-download or rebuild, then:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 sudo dpkg -i ~/Downloads/win11-window-tiling_1.0.0_all.deb\line
+sudo apt install -f\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 10. Uninstalling\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Remove user configuration only\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup --uninstall\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This removes: - {\f1 ~/.config/win11-tiling/} - GNOME Tiling Shell extension (user copy) - KDE KZones script - X11 autostart entry - Running {\f1 xbindkeys} process\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Log out and back in after uninstalling user config.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Remove the package entirely\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup --uninstall\line
+sudo apt remove win11-window-tiling\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 11. File Locations\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx3456\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Path\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Purpose\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3456\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 /usr/bin/win11-tiling-setup}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Main setup and status command\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3456\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 /usr/bin/win11-tile}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Manual window tiling CLI\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3456\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 /usr/share/win11-tiling/}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Bundled extensions, scripts, defaults\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3456\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 /usr/share/doc/win11-window-tiling/README}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Short package readme\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3456\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 ~/.config/win11-tiling/}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 User config (X11 xbindkeys, setup marker)\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3456\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 ~/.config/win11-tiling/installed}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Setup timestamp and desktop type\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3456\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 ~/.config/autostart/win11-tiling-x11.desktop}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 X11 autostart entry\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3456\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 ~/.local/share/gnome-shell/extensions/tilingshell@ferrarodomenico.com/}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 GNOME extension (user install)\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3456\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 ~/.local/share/kwin/scripts/kzones.kwinscript}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 KDE KZones script\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Quick Start Checklist\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Install: {\f1 sudo dpkg -i win11-window-tiling_1.0.0_all.deb}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Fix deps: {\f1 sudo apt install -f}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Setup: {\f1 win11-tiling-setup}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Log out and back in\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Verify: {\f1 win11-tiling-setup --status}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Enable extension (GNOME): Extensions app \u8594 ? Tiling Shell \u8594 ? ON\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Test: {\f1 Super + Left} on a window, or drag a window to the top of the screen\sa180\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\i Package version 1.0.0 \u8212- Bundled extensions retain their original licenses (GPL). Package scripts: MIT License.}\par}
+}

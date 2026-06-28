@@ -1,0 +1,18 @@
+win11-window-tiling — Arch Linux GNOME Edition
+==============================================
+
+Windows 11-style window tiling for Arch Linux with GNOME and Tiling Shell.
+
+Install (after building the package)
+------------------------------------
+
+  sudo pacman -U win11-window-tiling-gnome-1.0.0-1-any.pkg.tar.zst
+
+Setup
+-----
+
+  win11-tiling-setup
+
+Log out and back in, then enable Tiling Shell in Extensions.
+
+License: Tiling Shell GPL-3.0-or-later; scripts MIT.

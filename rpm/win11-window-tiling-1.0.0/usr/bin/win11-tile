@@ -1,0 +1,71 @@
+#!/bin/bash
+# Tile the active window — Windows 11-style snap positions.
+
+set -euo pipefail
+
+POSITION="${1:-}"
+DESKTOP="$(/usr/share/win11-tiling/scripts/detect-desktop.sh)"
+
+if [ -z "$POSITION" ]; then
+    cat <<'EOF'
+Usage: win11-tile <position>
+
+Positions:
+  left, right, top, bottom
+  top-left, top-right, bottom-left, bottom-right
+  maximize (or up), restore (or down), center
+
+Keyboard shortcuts (after setup):
+  Super+Left   - Snap left half
+  Super+Right  - Snap right half
+  Super+Up     - Maximize
+  Super+Down   - Restore / minimize
+EOF
+    exit 1
+fi
+
+case "$POSITION" in
+    up) POSITION="maximize" ;;
+    down) POSITION="restore" ;;
+esac
+
+case "$DESKTOP" in
+    kde)
+        KDE_ACTION=""
+        case "$POSITION" in
+            left)         KDE_ACTION="Window Quick Tile Left" ;;
+            right)        KDE_ACTION="Window Quick Tile Right" ;;
+            top)          KDE_ACTION="Window Quick Tile Top" ;;
+            bottom)       KDE_ACTION="Window Quick Tile Bottom" ;;
+            top-left)     KDE_ACTION="Window Quick Tile Top Left" ;;
+            top-right)    KDE_ACTION="Window Quick Tile Top Right" ;;
+            bottom-left)  KDE_ACTION="Window Quick Tile Bottom Left" ;;
+            bottom-right) KDE_ACTION="Window Quick Tile Bottom Right" ;;
+            maximize)     KDE_ACTION="Window Maximize" ;;
+            restore)      KDE_ACTION="Window Minimize" ;;
+        esac
+        if [ -n "$KDE_ACTION" ]; then
+            QDBUS=qdbus6
+            command -v qdbus6 >/dev/null 2>&1 || QDBUS=qdbus
+            "$QDBUS" org.kde.kglobalaccel /component/kwin invokeShortcut "$KDE_ACTION" 2>/dev/null || {
+                echo "Failed to invoke KDE action: $KDE_ACTION" >&2
+                exit 1
+            }
+        else
+            echo "Unsupported position for KDE: $POSITION" >&2
+            exit 1
+        fi
+        ;;
+    gnome)
+        echo "On GNOME, use Tiling Shell shortcuts or drag windows to screen edges." >&2
+        echo "Extension shortcuts: Super+Shift+Arrow (configurable in extension settings)." >&2
+        exit 1
+        ;;
+    *)
+        if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+            echo "Wayland session without KDE/GNOME support. Run win11-tiling-setup first." >&2
+            exit 1
+        fi
+        exec /usr/share/win11-tiling/scripts/tile-x11.sh "$POSITION"
+        ;;
+esac

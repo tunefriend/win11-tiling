@@ -1,0 +1,13 @@
+Package: win11-window-tiling-gnome
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Depends: dbus-x11 | dbus, bash, gnome-shell, gnome-shell-extensions | gnome-extensions, unzip
+Maintainer: Local Build <local@localhost>
+Description: Windows 11-style window tiling for Debian GNOME
+ Installs and configures the Tiling Shell GNOME extension with Snap
+ Assistant, Fancy Zones layouts, and Super+Arrow keyboard shortcuts.
+ .
+ Built specifically for Debian with GNOME. After install, run
+ 'win11-tiling-setup' and log out and back in.

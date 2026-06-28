@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Win11 Window Tiling (X11)
+Comment=Start Windows 11-style tiling hotkeys
+Exec=/bin/sh -c 'xbindkeys -f "${XDG_CONFIG_HOME:-$HOME/.config}/win11-tiling/xbindkeysrc"'
+Hidden=false
+NoDisplay=true
+X-GNOME-Autostart-enabled=true
+X-KDE-autostart-after=panel
+StartupNotify=false

@@ -1,0 +1,53 @@
+win11-window-tiling — Fedora Workstation Edition
+================================================
+
+Windows 11-style window tiling for Fedora Workstation (GNOME).
+
+This edition installs the Tiling Shell GNOME extension with Snap Assistant,
+Fancy Zones layouts, and Super+Arrow keyboard shortcuts.
+
+Requirements
+------------
+
+  Fedora Workstation with GNOME Shell 45 or newer.
+
+Install
+-------
+
+  sudo dnf install ./win11-window-tiling-1.0.0-1.fc41.noarch.rpm
+
+Setup
+-----
+
+  win11-tiling-setup
+
+Log out and back in, then open Extensions and confirm Tiling Shell is enabled.
+
+Usage
+-----
+
+  Super + Left/Right/Up/Down   Move focused window between tiles
+  Drag window to top edge      Open Snap Assistant (layout picker)
+  Drag to screen edges         Snap to halves or quarters
+  Ctrl + drag                  Place window in a specific tile
+  Alt + drag                   Span across multiple tiles
+
+Settings: Extensions > Tiling Shell
+
+Commands
+--------
+
+  win11-tiling-setup --status     Check install status
+  win11-tiling-setup --uninstall  Remove extension from your user profile
+
+Build from source (on Fedora)
+-----------------------------
+
+  cd fedora-workstation
+  ./build.sh
+
+License
+-------
+
+Tiling Shell extension: GPL-3.0-or-later (https://github.com/domferr/tilingshell)
+Package scripts: MIT License

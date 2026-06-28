@@ -1,0 +1,395 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \qc \f0 \sa180 \li0 \fi0 \b \fs36 win11-window-tiling Arch Linux Arch-KDE User Manual\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 win11-window-tiling \u8212- Arch Linux KDE Plasma User Manual\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Version 1.0.0 (Arch Linux KDE Plasma Edition)}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Windows 11-style window tiling for Arch Linux with KDE Plasma and KZones.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Table of Contents\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab {\field{\*\fldinst{HYPERLINK "#1-overview"}}{\fldrslt{\ul
+Overview
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab {\field{\*\fldinst{HYPERLINK "#2-requirements"}}{\fldrslt{\ul
+Requirements
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab {\field{\*\fldinst{HYPERLINK "#3-installation"}}{\fldrslt{\ul
+Installation
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 4.\tx360\tab {\field{\*\fldinst{HYPERLINK "#4-first-time-setup"}}{\fldrslt{\ul
+First-Time Setup
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 5.\tx360\tab {\field{\*\fldinst{HYPERLINK "#5-daily-use"}}{\fldrslt{\ul
+Daily Use
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 6.\tx360\tab {\field{\*\fldinst{HYPERLINK "#6-configuration"}}{\fldrslt{\ul
+Configuration
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 7.\tx360\tab {\field{\*\fldinst{HYPERLINK "#7-commands"}}{\fldrslt{\ul
+Commands
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 8.\tx360\tab {\field{\*\fldinst{HYPERLINK "#8-troubleshooting"}}{\fldrslt{\ul
+Troubleshooting
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 9.\tx360\tab {\field{\*\fldinst{HYPERLINK "#9-uninstalling"}}{\fldrslt{\ul
+Uninstalling
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 10.\tx360\tab {\field{\*\fldinst{HYPERLINK "#10-building-from-source"}}{\fldrslt{\ul
+Building from Source
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 11.\tx360\tab {\field{\*\fldinst{HYPERLINK "#11-license"}}{\fldrslt{\ul
+License
+}}}
+\sa180\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 1. Overview\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This package is built specifically for {\b Arch Linux with KDE Plasma}. It installs and configures {\b KZones}, a KWin script that brings Windows 11-style zone snapping to KDE.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Features\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Feature\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Description\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Zone snapping\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Drag windows to screen edges to snap into zones\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Fancy Zones style\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Customizable zone layouts per monitor\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Keyboard shortcuts\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + arrow keys matching Windows 11\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Quarter tiling\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Shift + arrows for corner tiles\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Package name\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\f1 win11-window-tiling-kde}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Upstream project\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 KZones: https://github.com/gerritdevriese/kzones\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 2. Requirements\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Arch Linux} with KDE Plasma (Plasma 6)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b KWin} window manager\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Dependencies (installed automatically):\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\f1 plasma-workspace}\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\f1 kwin}\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\f1 dbus}\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\f1 bash}\sa180\sa180\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 3. Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Step 1 \u8212- Copy the package to your Arch machine\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Transfer the file:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\f1 win11-window-tiling-kde-1.0.0-1-any.pkg.tar.zst}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 (or {\f1 .pkg.tar.gz} if cross-built)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Step 2 \u8212- Install with pacman\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 sudo pacman -U win11-window-tiling-kde-1.0.0-1-any.pkg.tar.zst\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Step 3 \u8212- Verify installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 pacman -Q win11-window-tiling-kde\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Expected output: {\f1 win11-window-tiling-kde 1.0.0-1}\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 4. First-Time Setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Run setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This copies KZones to your user profile, loads it in KWin, and configures Super+Arrow shortcuts.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Log out and back in\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Verify\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup --status\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Check {\b System Settings \u8594 ? Window Management \u8594 ? KWin Scripts} for KZones.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 5. Daily Use\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Keyboard shortcuts\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Shortcut\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Action\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Left\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Tile to left half\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Right\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Tile to right half\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Up\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Maximize\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Down\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Minimize\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Shift + Left\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Top-left quarter\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Shift + Right\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Top-right quarter\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Shift + Down\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Bottom-left quarter\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Shift + Up\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Bottom-right quarter\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Mouse\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Drag windows to screen edges to snap into KZones.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Command-line tiling\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tile left\line
+win11-tile right\line
+win11-tile top-left\line
+win11-tile maximize\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 6. Configuration\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 KZones zone layouts\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b System Settings \u8594 ? Window Management \u8594 ? KWin Scripts \u8594 ? KZones \u8594 ? Configure}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Keyboard shortcuts\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b System Settings \u8594 ? Shortcuts \u8594 ? KWin} \u8212- search for {\b Window Quick Tile} actions.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 7. Commands\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Command\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Description\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Install and enable KZones\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --status}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Show configuration status\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --uninstall}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Remove KZones from user profile\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tile <position>}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Manually tile the active window\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 win11-tile positions\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\f1 left}, {\f1 right}, {\f1 top}, {\f1 bottom}, {\f1 top-left}, {\f1 top-right}, {\f1 bottom-left}, {\f1 bottom-right}, {\f1 maximize}, {\f1 restore}\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 8. Troubleshooting\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 KWin not found\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 sudo pacman -S plasma-workspace kwin\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Zones or shortcuts not working\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Log out and back in. Check {\b System Settings \u8594 ? Shortcuts} for Meta key conflicts.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Load KZones manually\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 qdbus6 org.kde.KWin /Scripting org.kde.kwin.Scripting.loadScript \\\line
+  ~/.local/share/kwin/scripts/kzones.kwinscript kzones\line
+qdbus6 org.kde.KWin /Scripting org.kde.kwin.Scripting.runScript kzones\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Use {\f1 qdbus} instead of {\f1 qdbus6} on older setups.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Wrong edition installed\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Use {\f1 win11-window-tiling-kde}, not {\f1 win11-window-tiling-gnome}.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 9. Uninstalling\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup --uninstall\line
+sudo pacman -R win11-window-tiling-kde\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Log out and back in.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 10. Building from Source\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 On Arch Linux:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 sudo pacman -S base-devel\line
+cd arch-kde\line
+./build.sh\line
+sudo pacman -U win11-window-tiling-kde-1.0.0-1-any.pkg.tar.zst\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 11. License\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Component\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 License\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 KZones KWin script\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 GPL-3.0\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Package setup scripts\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 MIT License\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Quick Start Checklist\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Install: {\f1 sudo pacman -U win11-window-tiling-kde-1.0.0-1-any.pkg.tar.zst}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Setup: {\f1 win11-tiling-setup}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Log out and back in\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Verify: {\f1 win11-tiling-setup --status}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Enable: KWin Scripts \u8594 ? KZones\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Test: Super + Left, or drag window to screen edge\sa180\par}
+}

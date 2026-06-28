@@ -1,0 +1,134 @@
+#!/bin/bash
+# Configure Windows 11-style window tiling for the current desktop environment.
+
+set -euo pipefail
+
+SHARE_DIR="/usr/share/win11-tiling"
+MARKER="${XDG_CONFIG_HOME:-$HOME/.config}/win11-tiling/installed"
+
+usage() {
+    cat <<'EOF'
+win11-tiling-setup - Enable Windows 11-style window tiling
+
+Usage:
+  win11-tiling-setup              Detect DE and configure tiling
+  win11-tiling-setup --gnome      Force GNOME / Tiling Shell setup
+  win11-tiling-setup --kde        Force KDE / KZones setup
+  win11-tiling-setup --x11        Force X11 wmctrl + xbindkeys setup
+  win11-tiling-setup --status     Show current configuration status
+  win11-tiling-setup --uninstall  Remove user configuration
+
+After setup, log out and back in for full effect.
+EOF
+}
+
+show_status() {
+    DESKTOP="$("$SHARE_DIR/scripts/detect-desktop.sh")"
+    echo "Detected desktop: $DESKTOP"
+    echo "Session type:     ${XDG_SESSION_TYPE:-unknown}"
+
+    if [ -f "$MARKER" ]; then
+        echo "Setup status:     configured ($(cat "$MARKER"))"
+    else
+        echo "Setup status:     not configured"
+    fi
+
+    case "$DESKTOP" in
+        gnome)
+            EXT_UUID="tilingshell@ferrarodomenico.com"
+            EXT_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/gnome-shell/extensions/${EXT_UUID}"
+            if [ -d "$EXT_DIR" ]; then
+                echo "GNOME extension:  installed"
+                if command -v gnome-extensions >/dev/null 2>&1; then
+                    gnome-extensions info "$EXT_UUID" 2>/dev/null | grep -E '^(Name|State|Version):' || true
+                fi
+            else
+                echo "GNOME extension:  not installed"
+            fi
+            ;;
+        kde)
+            if [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/kwin/scripts/kzones.kwinscript" ]; then
+                echo "KZones script:    installed"
+            else
+                echo "KZones script:    not installed"
+            fi
+            ;;
+    esac
+}
+
+uninstall() {
+    rm -f "$MARKER"
+    rm -rf "${XDG_CONFIG_HOME:-$HOME/.config}/win11-tiling"
+    rm -f "${XDG_CONFIG_HOME:-$HOME/.config}/autostart/win11-tiling-x11.desktop"
+    rm -rf "${XDG_DATA_HOME:-$HOME/.local/share}/gnome-shell/extensions/tilingshell@ferrarodomenico.com"
+    rm -f "${XDG_DATA_HOME:-$HOME/.local/share}/kwin/scripts/kzones.kwinscript"
+
+    pkill -x xbindkeys 2>/dev/null || true
+
+    QDBUS=qdbus6
+    command -v qdbus6 >/dev/null 2>&1 || QDBUS=qdbus
+    if command -v "$QDBUS" >/dev/null 2>&1; then
+        "$QDBUS" org.kde.KWin /Scripting org.kde.kwin.Scripting.unloadScript kzones 2>/dev/null || true
+    fi
+
+    echo "win11-window-tiling user configuration removed."
+}
+
+run_setup() {
+    local mode="$1"
+    local desktop
+
+    if [ "$mode" = "auto" ]; then
+        desktop="$("$SHARE_DIR/scripts/detect-desktop.sh")"
+    else
+        desktop="$mode"
+    fi
+
+    echo "Configuring Windows 11-style tiling for: $desktop"
+    echo ""
+
+    case "$desktop" in
+        gnome)
+            bash "$SHARE_DIR/scripts/setup-gnome.sh"
+            ;;
+        kde)
+            bash "$SHARE_DIR/scripts/setup-kde.sh"
+            ;;
+        xfce|mate|cinnamon|x11|unknown)
+            if [ "${XDG_SESSION_TYPE:-}" = "wayland" ] && [ "$desktop" != "x11" ]; then
+                echo "WARNING: Wayland session without native GNOME/KDE support."
+                echo "         Install GNOME with Tiling Shell or KDE Plasma for best results."
+            fi
+            bash "$SHARE_DIR/scripts/setup-x11.sh"
+            ;;
+        *)
+            echo "Unknown desktop environment. Trying X11 fallback..."
+            bash "$SHARE_DIR/scripts/setup-x11.sh"
+            ;;
+    esac
+
+    mkdir -p "$(dirname "$MARKER")"
+    date -Iseconds > "$MARKER"
+    echo "$desktop" >> "$MARKER"
+
+    echo ""
+    echo "Setup complete! Log out and back in to apply all changes."
+    echo ""
+    echo "Windows 11 shortcuts:"
+    echo "  Super + Left/Right  - Snap to half screen"
+    echo "  Super + Up          - Maximize"
+    echo "  Super + Down        - Restore / minimize"
+    echo "  Drag to edges       - Snap layouts (GNOME/KDE)"
+}
+
+MODE="auto"
+case "${1:-}" in
+    "" ) run_setup "$MODE" ;;
+    --gnome)     run_setup "gnome" ;;
+    --kde)       run_setup "kde" ;;
+    --x11)       run_setup "x11" ;;
+    --status)    show_status ;;
+    --uninstall) uninstall ;;
+    -h|--help)   usage ;;
+    *) echo "Unknown option: $1" >&2; usage; exit 1 ;;
+esac

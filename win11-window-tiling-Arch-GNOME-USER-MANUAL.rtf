@@ -1,0 +1,510 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \qc \f0 \sa180 \li0 \fi0 \b \fs36 win11-window-tiling Arch Linux Arch- GNOME User Manual\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 win11-window-tiling \u8212- Arch Linux GNOME User Manual\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Version 1.0.0 (Arch Linux GNOME Edition)}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Windows 11-style window tiling for Arch Linux with GNOME and the Tiling Shell extension.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Table of Contents\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab {\field{\*\fldinst{HYPERLINK "#1-overview"}}{\fldrslt{\ul
+Overview
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab {\field{\*\fldinst{HYPERLINK "#2-requirements"}}{\fldrslt{\ul
+Requirements
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab {\field{\*\fldinst{HYPERLINK "#3-installation"}}{\fldrslt{\ul
+Installation
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 4.\tx360\tab {\field{\*\fldinst{HYPERLINK "#4-first-time-setup"}}{\fldrslt{\ul
+First-Time Setup
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 5.\tx360\tab {\field{\*\fldinst{HYPERLINK "#5-daily-use"}}{\fldrslt{\ul
+Daily Use
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 6.\tx360\tab {\field{\*\fldinst{HYPERLINK "#6-configuration"}}{\fldrslt{\ul
+Configuration
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 7.\tx360\tab {\field{\*\fldinst{HYPERLINK "#7-commands"}}{\fldrslt{\ul
+Commands
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 8.\tx360\tab {\field{\*\fldinst{HYPERLINK "#8-troubleshooting"}}{\fldrslt{\ul
+Troubleshooting
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 9.\tx360\tab {\field{\*\fldinst{HYPERLINK "#9-uninstalling"}}{\fldrslt{\ul
+Uninstalling
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 10.\tx360\tab {\field{\*\fldinst{HYPERLINK "#10-building-from-source"}}{\fldrslt{\ul
+Building from Source
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 11.\tx360\tab {\field{\*\fldinst{HYPERLINK "#11-license"}}{\fldrslt{\ul
+License
+}}}
+\sa180\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 1. Overview\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This package is built specifically for {\b Arch Linux with GNOME}. It installs and configures {\b Tiling Shell}, a GNOME Shell extension that brings Windows 11-style window management to Linux.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Features\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx3534\clbrdrb\brdrs\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Feature\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Description\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Snap Assistant\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Drag a window to the top of the screen to pick a layout\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Fancy Zones\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Custom tile grids per monitor and workspace\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Edge snapping\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Drag windows to screen edges to snap to halves or quarters\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Keyboard shortcuts\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + arrow keys to move windows between tiles\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Window menu integration\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Snap and auto-tile options in the title-bar right-click menu\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Package name\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\f1 win11-window-tiling-gnome}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Upstream project\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Tiling Shell: https://github.com/domferr/tilingshell\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 2. Requirements\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Arch Linux} with GNOME desktop\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b GNOME Shell 45 or newer} (recommended)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Dependencies (installed automatically with the package):\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\f1 gnome-shell}\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\f1 gnome-extensions}\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\f1 unzip}\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\f1 dbus}\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\f1 bash}\sa180\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Check your GNOME version:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 gnome-shell --version\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 3. Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Step 1 \u8212- Copy the package to your Arch machine\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Transfer the file:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\f1 win11-window-tiling-gnome-1.0.0-1-any.pkg.tar.zst}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 (or {\f1 .pkg.tar.gz} if cross-built)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Step 2 \u8212- Install with pacman\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 sudo pacman -U win11-window-tiling-gnome-1.0.0-1-any.pkg.tar.zst\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Step 3 \u8212- Verify installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 pacman -Q win11-window-tiling-gnome\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Expected output: {\f1 win11-window-tiling-gnome 1.0.0-1}\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 4. First-Time Setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Run setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This installs the Tiling Shell extension to your user profile and enables it.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Log out and back in\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 GNOME Shell extensions require a fresh session.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Verify\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup --status\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Also open {\b Extensions} and confirm {\b Tiling Shell} is toggled {\b ON}.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 5. Daily Use\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Keyboard shortcuts\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Shortcut\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Action\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Left\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move window to the tile on the left\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Right\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move window to the tile on the right\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Up\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move window to the tile above\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + Down\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Move window to the tile below\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Mouse and drag\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Action\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Result\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Drag to {\b top edge}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Snap Assistant layout picker\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Drag to {\b left/right edge}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Snap to half-screen or quarters\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b Ctrl + drag}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Place window in a specific tile\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b Alt + drag}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Span window across multiple tiles\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Settings\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Extensions \u8594 ? Tiling Shell \u8594 ? gear icon}\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 6. Configuration\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Key settings in Tiling Shell:\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx2880\clbrdrb\brdrs\cellx5760\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Setting\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Default\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 What it does\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2880\cellx5760\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Enable snap assist\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 On\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Layout picker at top edge\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2880\cellx5760\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Enable tiling system\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 On\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Ctrl + drag to snap into tiles\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2880\cellx5760\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Active screen edges\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 On\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Edge snapping\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2880\cellx5760\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Enable move keybindings\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 On\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Super + arrow shortcuts\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2880\cellx5760\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Inner gaps\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 16 px\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Space between tiles\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2880\cellx5760\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Enable auto tiling\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Off\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Auto-tile new windows\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Command-line settings\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 gsettings set org.gnome.shell.extensions.tilingshell enable-snap-assist false\line
+gsettings set org.gnome.shell.extensions.tilingshell inner-gaps 24\line
+gsettings set org.gnome.shell.extensions.tilingshell enable-autotiling true\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 7. Commands\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx3534\clbrdrb\brdrs\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Command\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Description\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Install and enable Tiling Shell\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --status}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Show configuration status\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --uninstall}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Remove extension from user profile\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx3534\cellx8639
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\f1 win11-tiling-setup --help}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Show usage\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 GNOME extension commands\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 gnome-extensions enable tilingshell@ferrarodomenico.com\line
+gnome-extensions info tilingshell@ferrarodomenico.com\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 8. Troubleshooting\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 gnome-shell not found\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 sudo pacman -S gnome-shell gnome-extensions\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Extension not working after setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 gnome-extensions enable tilingshell@ferrarodomenico.com\line
+win11-tiling-setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Log out and back in.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Super + arrow does nothing\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Check {\b Extensions \u8594 ? Tiling Shell \u8594 ? Keybindings} and {\b Settings \u8594 ? Keyboard} for conflicts.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Wrong edition installed\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Use {\f1 win11-window-tiling-gnome}, not {\f1 win11-window-tiling-kde}.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 9. Uninstalling\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 win11-tiling-setup --uninstall\line
+sudo pacman -R win11-window-tiling-gnome\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Log out and back in after removing user config.\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 10. Building from Source\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 On Arch Linux:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 sudo pacman -S base-devel\line
+cd arch-gnome\line
+./build.sh\line
+sudo pacman -U win11-window-tiling-gnome-1.0.0-1-any.pkg.tar.zst\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 11. License\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Component\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 License\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Tiling Shell extension\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 GPL-3.0-or-later\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx4320\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 Package setup scripts\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 MIT License\par}
+\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Quick Start Checklist\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Install: {\f1 sudo pacman -U win11-window-tiling-gnome-1.0.0-1-any.pkg.tar.zst}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Setup: {\f1 win11-tiling-setup}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Log out and back in\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Verify: {\f1 win11-tiling-setup --status}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Enable: Extensions \u8594 ? Tiling Shell \u8594 ? ON\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u9744 ? Test: Super + Left, or drag window to top edge\sa180\par}
+}
