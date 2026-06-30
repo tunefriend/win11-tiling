@@ -10,7 +10,7 @@ cd "$(dirname "$0")"
 GH_USER="${1:-tunefriend}"
 REPO="${GH_USER}/win11-tiling"
 BODY_FILE="RELEASE_v1.0.1.md"
-PROFILE_BIO=$'TuneFriend — stream music from a friend\u2019s Subsonic/Navidrome server on Android.\nWin11 Window Tiling — Windows 11-style snap layouts for Linux (GNOME & KDE).\nGPL-3.0.'
+PROFILE_BIO='TuneFriend — Subsonic/Navidrome music on Android. Win11 Window Tiling — snap layouts for Linux (GNOME & KDE). GPL-3.0.'
 
 GH_BIN=""
 if command -v gh >/dev/null 2>&1; then
@@ -112,7 +112,11 @@ fi
 
 echo "==> Updating v1.0.1 release notes"
 if $use_token; then
-  api_patch_json "https://api.github.com/repos/${REPO}/releases/tags/v1.0.1" "$(python3 - <<'PY'
+  RELEASE_ID=$(curl -fsSL -H "Authorization: Bearer ${GH_TOKEN}" \
+    -H "Accept: application/vnd.github+json" \
+    "https://api.github.com/repos/${REPO}/releases/tags/v1.0.1" \
+    | python3 -c "import json,sys; print(json.load(sys.stdin)['id'])")
+  api_patch_json "https://api.github.com/repos/${REPO}/releases/${RELEASE_ID}" "$(python3 - <<'PY'
 import json, pathlib
 body = pathlib.Path("RELEASE_v1.0.1.md").read_text()
 print(json.dumps({
