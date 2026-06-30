@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Update the v1.0.1 release notes and repo description on GitHub.
-# Requires: GH_TOKEN (classic token with repo scope) or `gh auth login`
+# Auth options (pick one):
+#   1. ./setup-github-token.sh   (browser login — recommended)
+#   2. export GH_TOKEN=ghp_...   (classic token WITH repo scope checked)
 set -euo pipefail
 
 cd "$(dirname "$0")"
@@ -8,31 +10,68 @@ cd "$(dirname "$0")"
 GH_USER="${1:-tunefriend}"
 REPO="${GH_USER}/win11-tiling"
 BODY_FILE="RELEASE_v1.0.1.md"
+PROFILE_BIO=$'TuneFriend — stream music from a friend\u2019s Subsonic/Navidrome server on Android.\nWin11 Window Tiling — Windows 11-style snap layouts for Linux (GNOME & KDE).\nGPL-3.0.'
 
-if [[ -z "${GH_TOKEN:-}" ]] && ! command -v gh >/dev/null 2>&1; then
-  echo "Error: set GH_TOKEN or install gh and run 'gh auth login'." >&2
-  exit 1
+GH_BIN=""
+if command -v gh >/dev/null 2>&1; then
+  GH_BIN=gh
+elif [[ -x /tmp/gh_2.74.2_linux_amd64/bin/gh ]]; then
+  GH_BIN=/tmp/gh_2.74.2_linux_amd64/bin/gh
 fi
 
-check_token_scopes() {
-  local headers scopes
-  headers=$(curl -sSI -H "Authorization: Bearer ${GH_TOKEN}" "https://api.github.com/user")
-  scopes=$(echo "$headers" | awk -F': ' 'tolower($1)=="x-oauth-scopes" {print $2}' | tr -d '\r')
-
-  if [[ -z "$scopes" ]]; then
-    echo "Error: this token has no OAuth scopes." >&2
-    echo "Create a classic token with the 'repo' scope at:" >&2
-    echo "  https://github.com/settings/tokens/new?scopes=repo&description=win11-tiling-release" >&2
-    exit 1
-  fi
-
-  if [[ "$scopes" != *"repo"* ]]; then
-    echo "Error: token scopes are '${scopes}' but 'repo' is required." >&2
-    echo "Create a new classic token with 'repo' at:" >&2
-    echo "  https://github.com/settings/tokens/new?scopes=repo&description=win11-tiling-release" >&2
-    exit 1
-  fi
+token_scopes() {
+  curl -sSI -H "Authorization: Bearer ${GH_TOKEN}" "https://api.github.com/user" \
+    | awk -F': ' 'tolower($1)=="x-oauth-scopes" {print $2}' | tr -d '\r'
 }
+
+gh_has_repo_scope() {
+  [[ -n "$GH_BIN" ]] && "$GH_BIN" auth status 2>&1 | grep -q "Token scopes:.*repo"
+}
+
+print_token_help() {
+  cat >&2 <<'EOF'
+No working GitHub credentials found.
+
+EASIEST — browser login (recommended):
+  ./setup-github-token.sh
+  ./update-github-release.sh
+
+OR — classic personal access token:
+  1. Open: https://github.com/settings/tokens/new
+  2. Note: win11-tiling-release
+  3. Expiration: 30 days (or your choice)
+  4. CHECK THE BOX: repo   <-- required (Full control of private repositories)
+  5. Click "Generate token" at the bottom
+  6. Copy the ghp_... token immediately
+  7. export GH_TOKEN="ghp_..."
+  8. ./update-github-release.sh
+
+If you skip step 4, the token will have "Token scopes: none" and every write fails.
+EOF
+}
+
+use_gh=false
+use_token=false
+
+if [[ -n "${GH_TOKEN:-}" ]]; then
+  scopes=$(token_scopes || true)
+  if [[ -n "$scopes" && "$scopes" == *"repo"* ]]; then
+    use_token=true
+  elif [[ -z "$scopes" ]]; then
+    echo "Error: GH_TOKEN has no scopes (you did not check 'repo' when creating it)." >&2
+    print_token_help
+    exit 1
+  else
+    echo "Error: GH_TOKEN scopes are '${scopes}' but 'repo' is required." >&2
+    print_token_help
+    exit 1
+  fi
+elif gh_has_repo_scope; then
+  use_gh=true
+else
+  print_token_help
+  exit 1
+fi
 
 api_patch_json() {
   local url="$1"
@@ -55,12 +94,8 @@ api_patch_json() {
   fi
 }
 
-if [[ -n "${GH_TOKEN:-}" ]]; then
-  check_token_scopes
-fi
-
 echo "==> Updating repo description"
-if [[ -n "${GH_TOKEN:-}" ]]; then
+if $use_token; then
   api_patch_json "https://api.github.com/repos/${REPO}" "$(python3 - <<'PY'
 import json
 print(json.dumps({
@@ -70,13 +105,13 @@ print(json.dumps({
 PY
 )"
 else
-  gh repo edit "${REPO}" \
+  "$GH_BIN" repo edit "${REPO}" \
     --description "Windows 11-style window tiling for Linux — GNOME & KDE packages for Debian, Fedora, RHEL, and Arch." \
     --homepage "https://github.com/tunefriend/win11-tiling/releases/latest"
 fi
 
 echo "==> Updating v1.0.1 release notes"
-if [[ -n "${GH_TOKEN:-}" ]]; then
+if $use_token; then
   api_patch_json "https://api.github.com/repos/${REPO}/releases/tags/v1.0.1" "$(python3 - <<'PY'
 import json, pathlib
 body = pathlib.Path("RELEASE_v1.0.1.md").read_text()
@@ -87,15 +122,14 @@ print(json.dumps({
 PY
 )"
 else
-  gh release edit v1.0.1 --repo "${REPO}" \
+  "$GH_BIN" release edit v1.0.1 --repo "${REPO}" \
     --title "Win11 Window Tiling v1.0.1" \
     --notes-file "$BODY_FILE"
 fi
 
 echo "==> Updating tunefriend profile"
-PROFILE_BIO=$'TuneFriend — stream music from a friend\u2019s Subsonic/Navidrome server on Android.\nWin11 Window Tiling — Windows 11-style snap layouts for Linux (GNOME & KDE).\nGPL-3.0.'
-if [[ -n "${GH_TOKEN:-}" ]]; then
-  api_patch_json "https://api.github.com/user" "$(python3 - <<'PY'
+if $use_token; then
+  api_patch_json "https://api.github.com/user" "$(PROFILE_BIO="$PROFILE_BIO" python3 - <<'PY'
 import json, os
 print(json.dumps({
     "name": "tunefriend",
@@ -104,7 +138,7 @@ print(json.dumps({
 PY
 )"
 else
-  gh api user -X PATCH -f name=tunefriend -f bio="$PROFILE_BIO"
+  "$GH_BIN" api user -X PATCH -f name=tunefriend -f bio="$PROFILE_BIO"
 fi
 
 echo "Done."
